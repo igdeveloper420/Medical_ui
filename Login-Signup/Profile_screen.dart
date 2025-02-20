@@ -1,0 +1,272 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:medical/Screens/Login-Signup/login.dart';  // Ensure this import is correct
+import 'package:medical/Screens/Widgets/profile_list.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
+
+class Profile_screen extends StatelessWidget {
+  const Profile_screen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 3, 226, 215),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(height: 50),
+            Center(
+              child: Stack(
+                children: [
+                  const SizedBox(height: 50),
+                  Container(
+                    width: 110,
+                    height: 110,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 4, color: Colors.white),
+                      boxShadow: [
+                        BoxShadow(
+                          spreadRadius: 2,
+                          blurRadius: 10,
+                          color: Colors.black.withOpacity(0.1),
+                        ),
+                      ],
+                      shape: BoxShape.circle,
+                      image: const DecorationImage(
+                        image: AssetImage("lib/icons/avatar.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(width: 1, color: Colors.white),
+                        color: Colors.white,
+                        image: const DecorationImage(
+                          image: AssetImage("lib/icons/camra.png"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "User Xyz",
+                  style: GoogleFonts.poppins(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(height: 30),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.09,
+                    width: MediaQuery.of(context).size.width * 0.25,
+                    child: Column(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height * 0.04,
+                          width: MediaQuery.of(context).size.width * 0.15,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("lib/icons/callories.png"),
+                              filterQuality: FilterQuality.high,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          "Calories",
+                          style: GoogleFonts.poppins(
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromARGB(255, 245, 243, 243),
+                          ),
+                        ),
+                        const SizedBox(height: 5),
+                        Text(
+                          "103lbs",
+                          style: GoogleFonts.poppins(
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 50,
+                    width: 1,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.09,
+                    width: MediaQuery.of(context).size.width * 0.25,
+                    child: Column(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height * 0.04,
+                          width: MediaQuery.of(context).size.width * 0.15,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("lib/icons/weight.png"),
+                              filterQuality: FilterQuality.high,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          "Weight",
+                          style: GoogleFonts.poppins(
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromARGB(255, 245, 243, 243),
+                          ),
+                        ),
+                        const SizedBox(height: 5),
+                        Text(
+                          "756cal",
+                          style: GoogleFonts.poppins(
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 50,
+                    width: 1,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.09,
+                    width: MediaQuery.of(context).size.width * 0.25,
+                    child: Column(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height * 0.04,
+                          width: MediaQuery.of(context).size.width * 0.15,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("lib/icons/heart.png"),
+                              filterQuality: FilterQuality.high,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          "Heart rate",
+                          style: GoogleFonts.poppins(
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Color.fromARGB(255, 245, 243, 243),
+                          ),
+                        ),
+                        const SizedBox(height: 5),
+                        Text(
+                          "215bpm",
+                          style: GoogleFonts.poppins(
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 50),
+            Container(
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+              ),
+              child: Column(
+                children: [
+                  const SizedBox(height: 50),
+                  const profile_list(
+                    image: "lib/icons/heart2.png",
+                    title: "My Saved",
+                    color: Colors.black87,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                    child: Divider(),
+                  ),
+                  const profile_list(
+                    image: "lib/icons/appoint.png",
+                    title: "Appointment",
+                    color: Colors.black87,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                    child: Divider(),
+                  ),
+                  const profile_list(
+                    image: "lib/icons/chat.png",
+                    title: "FAQs",
+                    color: Colors.black87,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                    child: Divider(),
+                  ),
+                  const profile_list(
+                    image: "lib/icons/pay.png",
+                    title: "Payment Method",
+                    color: Colors.black87,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                    child: Divider(),
+                  ),
+                  // Wrap the Log out item in GestureDetector
+                  GestureDetector(
+                    onTap: () {
+                      // Navigate to the login screen when tapped
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
+                        ),
+                      );
+                    },
+                    child: const profile_list(
+                      image: "lib/icons/logout.png",
+                      title: "Log out",
+                      color: Colors.red,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
